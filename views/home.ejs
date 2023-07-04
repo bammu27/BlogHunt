@@ -1,0 +1,26 @@
+
+<%- include('partials/header') -%>
+<div class="d-flex flex-column">
+<div class="container justify-content-center p-5 ">
+    <h1 class="text-start font-monospace">Home</h1>
+    <p class=""><%= content %></p>
+    <form action="compose" method="get">
+        <button class="btn btn-danger btn-md m-3">New post</button>
+    </form>
+</div>
+<div class="container justify-content-center p-5">
+<h2 class="font-monospace fw-bolder m-3">Blogs</h2>
+<% blog.forEach(function(post){%>
+   
+    <h2><%= post['title'] %></h2>
+    
+    <p><%= post['post'].substring(0,200)+'...'%> <a href="posts/<%= post['title'] %>">Read more</a>
+        </p>
+
+<%})%>
+
+
+
+</div>
+</div>
+<%- include('partials/footer') -%>
